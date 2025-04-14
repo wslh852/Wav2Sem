@@ -1,0 +1,27 @@
+10
+Mon Jan 15 20:25:02 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.146.02             Driver Version: 535.146.02   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 4090        Off | 00000000:01:00.0  On |                  Off |
+|  0%   41C    P8              32W / 450W |    424MiB / 24564MiB |      1%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      1902      G   /usr/lib/xorg/Xorg                          205MiB |
+|    0   N/A  N/A      2037      G   /usr/bin/gnome-shell                         75MiB |
+|    0   N/A  N/A      2987      G   ...ures=SpareRendererForSitePerProcess       30MiB |
+|    0   N/A  N/A      3580      G   ...ures=SpareRendererForSitePerProcess       76MiB |
+|    0   N/A  N/A      3894      G   ...irefox/3626/usr/lib/firefox/firefox       14MiB |
++---------------------------------------------------------------------------------------+
+/home/china/anaconda3/envs/codetalker/bin/pip
+python3: can't open file 'main/train_pred.py': [Errno 2] No such file or directory

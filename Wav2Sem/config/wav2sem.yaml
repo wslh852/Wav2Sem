@@ -1,0 +1,80 @@
+DATA:
+  dataset: vocaset
+  data_root: /home/lh/Data/lihao/LS960/LibriSpeech960
+  audio_processor : /home/lh/lihao/facebook/wav2vec2-base-960h
+  BERT_tokenizer : /home/lh/lihao/bert
+  BERT_model : /home/lh/lihao/bert
+  wav_path: wav
+  vertices_path: vertices_npy
+  template_file: templates.pkl
+  read_audio: False
+
+
+LOSS:
+  quant_loss_weight: 1.0
+
+
+NETWORK:
+  arch: wav2bert
+  conv_dim : [512,512,512,512,512,512,512]
+  conv_stride : [5,2,2,2,2,2,2]
+  conv_kernel : [10,3,3,3,3,2,2]
+  conv_bias : False
+  feat_extract_norm : "group"
+  num_feat_extract_layers : 7
+  layer_norm_eps : 0.00001
+  hidden_size : 768
+  feat_proj_dropout : 0.1
+  num_conv_pos_embeddings : 128
+  num_conv_pos_embedding_groups : 16
+  num_hidden_layers : 12
+  num_attention_heads : 12
+  attention_dropout : 0.1
+  activation_dropout : 0.1
+  intermediate_size : 3072
+  hidden_dropout : 0.1
+  layerdrop : 0.1
+
+
+
+TRAIN:
+  use_sgd: False
+  sync_bn: False  # adopt sync_bn or not
+  train_gpu: [0]
+  workers: 20  # data loader workers
+  batch_size: 1 # batch size for training
+  batch_size_val: 1  # batch size for validation during training, memory and speed tradeoff
+  base_lr: 0.00001
+  StepLR: True
+  warmup_steps: 1
+  adaptive_lr: False
+  factor: 0.3
+  patience: 3
+  threshold: 0.0001
+  poly_lr: False
+  epochs: 200
+  step_size: 20
+  gamma: 0.5
+  start_epoch: 0
+  power: 0.9
+  momentum: 0.9
+  weight_decay: 0.002
+  manual_seed: 131
+  print_freq: 10
+  save_freq: 1
+  save_path: /home/lh/lihao/wav2bertcvpr2024/Wav2Sem/Wav2Sem/save_data
+#  weight: 
+  weight:
+  resume:
+  evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
+  eval_freq: 1000
+
+Distributed:
+  dist_url: tcp://127.0.0.1:6701
+  dist_backend: 'nccl'
+  multiprocessing_distributed: True
+  world_size: 1
+  rank: 0
+
+
+
