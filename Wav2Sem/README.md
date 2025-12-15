@@ -30,3 +30,7 @@ Training file address ：./Wav2Sem/main/train_wav2sem.py
 
 ### **Plug-and-play**
 We provide a usage case of Wav2Sem in Codetalker at the project address ./CodeTalker_Wav2Sem
+
+### **Model Weights Path**
+Link: https://pan.baidu.com/s/11Kr_RO4e6mrGt5TfKScnZQ?pwd=x99m 
+Extraction Code: x99m 
